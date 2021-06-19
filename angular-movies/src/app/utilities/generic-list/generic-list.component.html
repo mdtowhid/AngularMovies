@@ -1,0 +1,12 @@
+<div *ngIf="!list">
+    <span #loading>
+        <ng-content select="[loading]"></ng-content>
+    </span>
+    <span *ngIf="!loading.innerHTML.trim()">
+        <b>Loading...</b>
+    </span>
+</div>
+
+<ng-container *ngIf="list">
+    <ng-content select="[content]"></ng-content>
+</ng-container>
